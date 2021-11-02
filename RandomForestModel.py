@@ -3,7 +3,7 @@ from process_features import processData, writeData
 
 
 def random_forest_classifier(X_train, Y_train):
-    rf = RandomForestClassifier()
+    rf = RandomForestClassifier(n_estimators=400, n_jobs=4, verbose=1)
     rf_model = rf.fit(X_train,Y_train)
     return rf_model
 

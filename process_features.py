@@ -4,14 +4,13 @@ Machine Learning Project: Processing Features
 Run python3 process_features.py to watch the magic happen!
 '''
 
+import numpy
 import pandas as pd
-import numpy as np
 import csv
 
 
 # MODIFY THESE VALUES FOR YOUR SYSTEM
 DATASET_FOLDER = './mnist/'
-# OUTPUT_FOLDER = '.'
 OUTPUT_FOLDER = './output/'
 
 # TODO(): Download MNIST
@@ -28,10 +27,10 @@ def processData():
     print(X_train.shape)
     print(test.shape)
     return X_train, Y_train, test
-    # pass
 
 # TODO(): Scrub Features
 def scrubData(data):
+
     pass
 
 # TODO(): Output Results
