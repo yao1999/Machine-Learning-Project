@@ -4,7 +4,7 @@ Machine Learning Project: Processing Features
 Run python3 process_features.py to watch the magic happen!
 '''
 
-import numpy
+import numpy as np
 import pandas as pd
 import csv
 
@@ -17,14 +17,19 @@ OUTPUT_FOLDER = './output/'
 train_file_path = DATASET_FOLDER + "train.csv"
 test_file_path = DATASET_FOLDER + "test.csv"
 train = pd.read_csv(train_file_path)
-test = pd.read_csv(test_file_path)
+test_data = pd.read_csv(test_file_path)
 
 # TODO(): Process MNIST
 def processData():
     Y_train = train["label"]
     print(Y_train.shape)
     X_train = train.drop(labels = ["label"],axis = 1) 
+
+    # convert value that is > 0 (positive) to 1
+    X_train=np.where(X_train > 0, 1, 0) 
     print(X_train.shape)
+
+    test=np.where(test_data > 0, 1, 0)
     print(test.shape)
     return X_train, Y_train, test
 
