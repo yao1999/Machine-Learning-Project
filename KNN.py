@@ -1,10 +1,11 @@
 from sklearn.neighbors import KNeighborsClassifier
 from process_features import processData, writeData
-
+from grader import get_score
 
 def knn_classifier(X_train, Y_train):
     knn = KNeighborsClassifier()
     knn_model = knn.fit(X_train,Y_train)
+    # get_score(knn, X_train, Y_train, "Knn")
     return knn_model
 
 def knn_model(X_train, Y_train, test):
