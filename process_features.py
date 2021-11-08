@@ -7,7 +7,7 @@ Run python3 process_features.py to watch the magic happen!
 import numpy as np
 import pandas as pd
 import csv
-
+from sklearn.decomposition import PCA
 
 # MODIFY THESE VALUES FOR YOUR SYSTEM
 DATASET_FOLDER = './mnist/'
@@ -35,8 +35,12 @@ def processData():
 
 # TODO(): Scrub Features
 def scrubData(data):
+    XP_train, YP_train, P_test = processData()
 
-    pass
+    pca = PCA(n_components=5)
+    pca.fit(XP_train)
+    print(pca.explained_variance_ratio_)
+    print(pca.singular_values_)
 
 # TODO(): Output Results
 def writeData(data, filename):
