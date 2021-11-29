@@ -1,8 +1,14 @@
 from RandomForestModel import randome_forest_model
 from KNN import knn_model
 from process_features import processData
+# from process_features import scrubData
+
+# if __name__ == '__main__':
+#     X_train, X_test, y_train, y_test, test = scrubData()
+#     randome_forest_model(X_train, X_test, y_train, y_test, test)
+#     # knn_model(X_train, Y_train, test)
 
 if __name__ == '__main__':
     X_train, Y_train, test = processData()
     randome_forest_model(X_train, Y_train, test)
-    knn_model(X_train, Y_train, test)
+    # knn_model(X_train, Y_train, test)
