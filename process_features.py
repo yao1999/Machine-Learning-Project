@@ -23,20 +23,12 @@ test = pd.read_csv(test_file_path, engine = 'python',encoding='UTF-8')
 
 # TODO(): Process MNIST
 def processData():
-    # train_np = train.values
-    # Y_train = train_np[:,0]
-    # X_train = train_np[:,1:]
     Y_train = train["label"]
     print(Y_train.shape)
     X_train = train.drop(labels = ["label"],axis = 1)
 
-    # convert value that is > 0 (positive) to 1
-    # X_train=np.where(X_train > 0, 1, 0) 
     print(X_train.shape)
 
-    # test_np = test.values
-
-    # test=np.where(test_data > 0, 1, 0)
     print(test.shape)
     return X_train, Y_train, test
 
@@ -61,9 +53,6 @@ def writeData(data, filename):
         for i in range(len(data)):
             myWriter.writerow([i+1,str(data[i])])
     print("Finish writeData")
-    # dataframe = pd.DataFrame(data)
-    # dataframe.to_csv(csv_file)
-    # pass
 
 # if __name__ == '__main__':
 #     processData()

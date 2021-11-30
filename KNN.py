@@ -1,8 +1,7 @@
 from sklearn.neighbors import KNeighborsClassifier
-from process_features import processData, writeData
-# from grader import get_score
+from process_features import processData, writeData, scrubData
 def knn_classifier(X_train, Y_train):
-    knn = KNeighborsClassifier(n_neighbors=5, algorithm='kd_tree', weights='distance', p=3)
+    knn = KNeighborsClassifier(n_neighbors = 1)
     knn_model = knn.fit(X_train,Y_train)
     return knn_model
 
