@@ -1,5 +1,6 @@
 from sklearn.neighbors import KNeighborsClassifier
 from process_features import processData, writeData, scrubData
+
 def knn_classifier(X_train, Y_train):
     knn = KNeighborsClassifier(n_neighbors = 1)
     knn_model = knn.fit(X_train,Y_train)
