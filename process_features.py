@@ -34,7 +34,7 @@ def processData():
 
 # # TODO(): Scrub Features
 def scrubData(train, test, whiten, n_components):
-    pca = PCA(whiten=whiten, n_components=n_components)
+    pca = PCA(whiten=True, n_components=0.85)
 
     pca.fit(train)
     train_data = pca.transform(train)

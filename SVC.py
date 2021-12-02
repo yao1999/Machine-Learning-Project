@@ -20,7 +20,7 @@ def svc_model(X_train, y_train, test):
 
 
     print("Start PCA")
-    X_train, test = scrubData(X_train, test, True, 0.85)
+    X_train, test = scrubData(X_train, test)
     print("Finish PCA")
 
     print("Start SVC model")
